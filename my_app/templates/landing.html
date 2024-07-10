@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        header a:hover {
+            text-decoration: underline;
+        }
+        .cover {
+            height: 100vh;
+            background: url('static/images/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+        .cover::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .cover-content {
+            position: relative;
+            z-index: 2;
+        }
+        .cover h1 {
+            font-size: 60px;
+            margin: 0;
+        }
+        .cover p {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .cover .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .cover .button:hover {
+            background-color: #0056b3;
+        }
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #8b9db1;
+        }
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .section p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        .social-icons {
+            margin-top: 20px;
+        }
+        .social-icons a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+        .social-icons a:hover {
+            color: #0056b3;
+        }
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+        }
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#">My Project</a>
+        </div>
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#app">GitHub Stats App</a>
+        </nav>
+    </header>
+
+    <div class="cover">
+        <div class="cover-content">
+            <h1>My Project</h1>
+            <a href="/app" class="button">View GitHub Stats App</a>
+        </div>
+    </div>
+
+    <div id="about" class="section">
+        <h2><u>About me</u></h2>
+        <p>Hello! I'm <strong>Ashley Awuor</strong>, currently learning software engineering.I love creating innovative solutions to solve real-world problems and continuously learning new technologies to improve my skills.</p>
+        <p>In my free time, I enjoy reading tech blogs, contributing to open-source projects, and exploring new programming languages. I'm always open to collaborating on exciting projects and connecting with like-minded individuals.</p>
+        <div class="social-icons">
+            <a href="https://github.com/ashley-aa511" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/ashley-okeyo-a781a61b5/" target="_blank">LinkedIn</a>
+            <a href="mailto:okeyoashley@gmail.com">Email</a>
+        </div>
+    </div>
+
+    <div id="app" class="section">
+        <h2>GitHub Stats App</h2>
+        <p>The GitHub Stats App is a powerful tool designed to help developers and GitHub users gain quick insights into their GitHub profiles. By providing key statistics, the app enables users to track their progress, showcase their skills, and understand their engagement within the GitHub community. The app fetches real-time data including the number of repositories, followers, and following counts. It also provides detailed information about the programming languages used across the repositories. This tool is essential for developers who want to maintain an up-to-date overview of their GitHub activity and achievements.</p>
+        <p><a href="/app" class="button">View GitHub Stats App</a></p>
+    </div>
+
+    <div class="footer">
+        <p>Learn more about the GitHub Stats App <a href="/app">here</a>.</p>
+        <p>© 2024 Ashley Awuor. All rights reserved.</p>
+    </div>
+</body>
+</html>

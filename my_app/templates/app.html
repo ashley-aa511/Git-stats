@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GitHub Stats App</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            width: 100%;
+            background-color: #a53c9ec1;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 800px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 10px;
+            width: 100%;
+            max-width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #a414bd;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #b57cda;
+        }
+        .stats {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .stats h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .stats p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        .error {
+            color: rgb(129, 80, 142);
+            text-align: center;
+            margin-top: 20px;
+        }
+        .languages {
+            margin-top: 20px;
+        }
+        .languages h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .languages ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .languages li {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GitHub Stats</h1>
+    </header>
+
+    <div class="container">
+    <form action="/app" method="POST">
+        <label for="username">Enter GitHub Username:</label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit">Fetch Stats</button>
+    </form>
+
+    {% if error %}
+        <p>Error: {{ error }}</p>
+    {% endif %}
+
+    {% if stats %}
+    <div class="stats">
+        <h2>Number of Repositories: {{ stats.get('num_repos', 'N/A') }}</h2>
+        <h2>Followers: {{ stats.get('followers', 'N/A') }}</h2>
+        <h2>Following: {{ stats.get('following', 'N/A') }}</h2>
+        <h2>Created At: {{ stats.get('created_at', 'N/A') }}</h2>
+
+        <div class="languages">
+            <h3>Languages Used:</h3>
+            <ul>
+                {% for lang, bytes_used in stats.get('languages_used', {}).items() %}
+                    <li>{{ lang }}: {{ bytes_used }}</li>
+                {% endfor %}
+            </ul>
+            </div>
+            </div>
+            {% endif %}
+            </div>
+            </body>
+            </html>
