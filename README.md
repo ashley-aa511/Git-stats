@@ -1,3 +1,6 @@
+<a href="URL_REDIRECT" target="blank"><img align="center" src="git-code.jpg" height="600" /></a>
+
+
 # Project Name
 ## GitHub Stats App
 ### Introduction
